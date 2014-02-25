@@ -109,17 +109,7 @@
     [busCell.lblDistance setText: bus.busId];
     Coordinate *coordinate = bus.busCoordinate;
     [busCell.lblBusLocation setText: [NSString stringWithFormat:@"%@, %@", coordinate.latitude, coordinate.longitude]];
-    /*
-     for (Bus* bus in self.busList) {
-     
-     [busCell.lblDistance setText: [self.busList[indexPath.row] busId]];
-     
-     Coordinate *coordinate = [self.busList[indexPath.row] busCoordinate];
-     NSLog(@"%@", coordinate.latitude);
-     //[busCell.lblBusLocation setText: coordinate.latitude];
-     
-     }
-     */
+    
     return busCell;
 }
 

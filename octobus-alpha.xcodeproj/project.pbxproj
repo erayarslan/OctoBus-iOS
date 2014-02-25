@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB24C04518BCDA9600FCB0B5 /* BugSense-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB24C04418BCDA9600FCB0B5 /* BugSense-iOS.framework */; };
+		EB24C04718BCDAA200FCB0B5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB24C04618BCDAA200FCB0B5 /* SystemConfiguration.framework */; };
+		EB24C04918BCDAAA00FCB0B5 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EB24C04818BCDAAA00FCB0B5 /* libz.dylib */; };
 		EB3B03CF18A3E8A700D5A65C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB3B03CE18A3E8A700D5A65C /* Foundation.framework */; };
 		EB3B03D118A3E8A700D5A65C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB3B03D018A3E8A700D5A65C /* CoreGraphics.framework */; };
 		EB3B03D318A3E8A700D5A65C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB3B03D218A3E8A700D5A65C /* UIKit.framework */; };
@@ -39,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB24C04418BCDA9600FCB0B5 /* BugSense-iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "BugSense-iOS.framework"; path = "../../../Downloads/BugSense 3.6/BugSense-iOS.framework"; sourceTree = "<group>"; };
+		EB24C04618BCDAA200FCB0B5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		EB24C04818BCDAAA00FCB0B5 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		EB3B03CB18A3E8A700D5A65C /* octobus-alpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "octobus-alpha.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB3B03CE18A3E8A700D5A65C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EB3B03D018A3E8A700D5A65C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -75,6 +81,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB24C04918BCDAAA00FCB0B5 /* libz.dylib in Frameworks */,
+				EB24C04718BCDAA200FCB0B5 /* SystemConfiguration.framework in Frameworks */,
+				EB24C04518BCDA9600FCB0B5 /* BugSense-iOS.framework in Frameworks */,
 				EB3B03D118A3E8A700D5A65C /* CoreGraphics.framework in Frameworks */,
 				EB3B03D318A3E8A700D5A65C /* UIKit.framework in Frameworks */,
 				EB3B03CF18A3E8A700D5A65C /* Foundation.framework in Frameworks */,
@@ -116,6 +125,9 @@
 		EB3B03CD18A3E8A700D5A65C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EB24C04818BCDAAA00FCB0B5 /* libz.dylib */,
+				EB24C04618BCDAA200FCB0B5 /* SystemConfiguration.framework */,
+				EB24C04418BCDA9600FCB0B5 /* BugSense-iOS.framework */,
 				EB3B03CE18A3E8A700D5A65C /* Foundation.framework */,
 				EB3B03D018A3E8A700D5A65C /* CoreGraphics.framework */,
 				EB3B03D218A3E8A700D5A65C /* UIKit.framework */,
@@ -257,7 +269,7 @@
 				ORGANIZATIONNAME = 8CookIn;
 				TargetAttributes = {
 					EB3B03EB18A3E8A800D5A65C = {
-						TestTargetID = EB3B03CA18A3E8A700D5A65C /* octobus-alpha */;
+						TestTargetID = EB3B03CA18A3E8A700D5A65C;
 					};
 				};
 			};
@@ -440,6 +452,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/omerhakanbilici/Downloads/BugSense\\ 3.6",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "octobus-alpha/octobus-alpha-Prefix.pch";
 				INFOPLIST_FILE = "octobus-alpha/octobus-alpha-Info.plist";
@@ -453,6 +469,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/omerhakanbilici/Downloads/BugSense\\ 3.6",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "octobus-alpha/octobus-alpha-Prefix.pch";
 				INFOPLIST_FILE = "octobus-alpha/octobus-alpha-Info.plist";

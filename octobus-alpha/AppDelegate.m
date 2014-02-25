@@ -7,12 +7,14 @@
 //
 
 #import "AppDelegate.h"
+#import <BugSense-iOS/BugSenseController.h>
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [BugSenseController sharedControllerWithBugSenseAPIKey:@"apikeyhere"];
     
     // Changing the Font of Navigation Bar Title
     NSShadow *shadow = [[NSShadow alloc] init];
