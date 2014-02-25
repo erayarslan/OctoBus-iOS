@@ -23,17 +23,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     self.title = selectedLineName;
     
     
     self.busList=[self getBusListFromSAPI];
     
     [self.tableView reloadData];
-
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
- 
+    
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
@@ -54,18 +54,20 @@
             NSLog(@"Response code: %d", [(NSHTTPURLResponse*)response statusCode]);
             NSError *error;
             NSMutableDictionary *busDictionary = [NSJSONSerialization
-                                     JSONObjectWithData:data
-                                     options:NSJSONReadingMutableContainers
-                                     error:&error];
+                                                  JSONObjectWithData:data
+                                                  options:NSJSONReadingMutableContainers
+                                                  error:&error];
             
             NSArray* busTmpArray = busDictionary[@"busList"];
-
+            
             
             for (NSDictionary *theBus in busTmpArray)
             {
                 Bus *bus=[[Bus alloc]init];
                 [bus setBusId:theBus[@"id"]];
-                Coordinate *coor = theBus[@"coordinate"];
+                Coordinate *coor = [[Coordinate alloc]init]; //theBus[@"coordinate"];
+                coor.latitude = [theBus valueForKeyPath:@"coordinate.latitude"];
+                coor.longitude = [theBus valueForKeyPath:@"coordinate.longitude"];
                 [bus setBusCoordinate:coor];
                 [mutableBusList addObject:bus];
             }
@@ -77,7 +79,7 @@
         }
         
     }];
-
+    
     return mutableBusList;
     
 }
@@ -102,17 +104,22 @@
 {
     static NSString *CellIdentifier = @"BusCell";
     BusDetailCell *busCell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    Bus *bus = [self.busList objectAtIndex:indexPath.row];
     
-    for (Bus* bus in self.busList) {
-        
-        [busCell.lblDistance setText: [self.busList[indexPath.row] busId]];
-        
-        Coordinate *coordinate = [self.busList[indexPath.row] busCoordinate];
-        NSLog(@"%@", coordinate);
-//        [busCell.lblBusLocation setText: [coordinate.latitude description]];
-        
-    }
-    
+    [busCell.lblDistance setText: bus.busId];
+    Coordinate *coordinate = bus.busCoordinate;
+    [busCell.lblBusLocation setText: [NSString stringWithFormat:@"%@, %@", coordinate.latitude, coordinate.longitude]];
+    /*
+     for (Bus* bus in self.busList) {
+     
+     [busCell.lblDistance setText: [self.busList[indexPath.row] busId]];
+     
+     Coordinate *coordinate = [self.busList[indexPath.row] busCoordinate];
+     NSLog(@"%@", coordinate.latitude);
+     //[busCell.lblBusLocation setText: coordinate.latitude];
+     
+     }
+     */
     return busCell;
 }
 
